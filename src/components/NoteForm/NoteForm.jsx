@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createNote } from '../../utilities/notes-api';
 
 
 export default function NoteForm( { user, setUser }) {
@@ -14,14 +15,21 @@ export default function NoteForm( { user, setUser }) {
     setFormData(newFormData);
     }
 
-    
+    //Submit Form
+    async function handleSubmit(evt) {
+        evt.preventDefault();
+        //Send a post request to create a new note
+        const newNote = await createNote({ note: formData.note })
+        //Clear the form data
+        setFormData({ note: ''});
 
+    }
 
 
     return(
         <div> 
             <h1>Add A New Note</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 {/* //Add Input Field */}
                 <textarea
                     name="note"

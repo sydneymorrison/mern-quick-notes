@@ -1,8 +1,21 @@
 const Note = require('../../models/note');
 
 module.exports = {
+    index,
     create,
   };
+
+
+
+async function index(req, res) {
+    try {
+        const notes = await Note.find().exec();
+        res.status(200).json(notes);
+    } catch (error) {
+        res.status(500).json({error: 'Failed to retrieve note'});
+    }
+
+}
 
 async function create(req, res) {
     try {
@@ -18,8 +31,3 @@ async function create(req, res) {
         res.status(500).json({error: 'Failed to create note'});
     }
 }
-
-
-module.exports = { create };
-
-  
