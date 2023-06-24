@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-// import * as notesAPI from '../../utilities/notes-api'
 import NoteListItem from '../NoteListItem/NoteListItem';
-// import { getAllNotes } from '../../utilities/notes-api';
 
 
 export default function NoteList( { noteItems }) {
@@ -11,11 +9,11 @@ export default function NoteList( { noteItems }) {
 
         {noteItems.length > 0 ? (
           //Render the list of notes
-          <ul>
+          <div className="noteListContainer">
             {noteItems.map((note) => (
               <NoteListItem key={note._id} noteItem={note} />
             ))}
-          </ul>
+          </div>
         ) : (
           //Render no notes
           <p>No Notes Yet!</p>

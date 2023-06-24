@@ -27,13 +27,14 @@ export default function NoteForm( { user, setUser }) {
 
 
     return(
-        <div> 
+        <div className="formContainer"> 
             <h1>Add A New Note</h1>
             <form onSubmit={handleSubmit}>
+                <div className="inputContainer">
                 {/* //Add Input Field */}
                 <textarea
-                    name="note"
                     className="textAreaInput"
+                    name="note"
                     value={formData.note}
                     onChange={handleChange}
                 >
@@ -46,6 +47,7 @@ export default function NoteForm( { user, setUser }) {
                 >
                 ADD NOTE
                 </button>
+                </div>
             </form>
         </div>
     );
