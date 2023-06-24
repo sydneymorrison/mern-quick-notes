@@ -40,6 +40,7 @@ input {
   resize: vertical;
   transition: border-color 0.3s ease;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .formContainer {
@@ -56,6 +57,7 @@ input {
 }
 
 button[type="submit"] {
+  margin-top: 10px;
   display: block;
   justify-content: center;
   padding: 10px 16px;
@@ -85,6 +87,7 @@ button[type="submit"] {
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .signupFormContainerInput{
